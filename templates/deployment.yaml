@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "strongdm-relay.labels" . | nindent 4 }}
 spec:
-{{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-{{- end }}
   selector:
     matchLabels:
       {{- include "strongdm-relay.selectorLabels" . | nindent 6 }}
